@@ -1,6 +1,7 @@
 import { A, H2, H3 } from '@/components/mdx-utils'
 import '@/styles/globals.css'
 import { MDXProvider } from '@mdx-js/react'
+import { Analytics } from '@vercel/analytics/react'
 import type { AppProps } from 'next/app'
 import { Recursive } from 'next/font/google'
 
@@ -18,11 +19,15 @@ const components = {
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    // @ts-ignore
-    <MDXProvider components={components}>
-      <main className={`${recursive.variable} font-sans`}>
-        <Component {...pageProps} />
-      </main>
-    </MDXProvider>
+    <>
+      {/*
+      // @ts-ignore */}
+      <MDXProvider components={components}>
+        <main className={`${recursive.variable} font-sans`}>
+          <Component {...pageProps} />
+        </main>
+      </MDXProvider>
+      <Analytics />
+    </>
   )
 }
