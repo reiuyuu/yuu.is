@@ -1,6 +1,28 @@
+import { A, H2, H3 } from '@/components/mdx-utils'
 import '@/styles/globals.css'
+import { MDXProvider } from '@mdx-js/react'
 import type { AppProps } from 'next/app'
+import { Recursive } from 'next/font/google'
+
+const recursive = Recursive({
+  subsets: ['latin'],
+  variable: '--font-rec',
+  axes: ['MONO', 'CRSV'],
+})
+
+const components = {
+  h2: H2,
+  h3: H3,
+  a: A,
+}
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    // @ts-ignore
+    <MDXProvider components={components}>
+      <main className={`${recursive.variable} font-sans`}>
+        <Component {...pageProps} />
+      </main>
+    </MDXProvider>
+  )
 }

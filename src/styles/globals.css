@@ -2,26 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+@layer utilities {
+  .mono-0 {
+    --mono: 0;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+  .mono-55 {
+    --mono: 0.55;
+  }
+
+  .mono-100 {
+    --mono: 1;
+  }
+
+  .CRSV-1 {
+    --CRSV: 1;
   }
 }
 
+:root {
+  --blanc: 255 255 255;
+  --bleu: 61 77 179;
+
+  --mono: 0;
+  --CRSV: 0;
+}
+
+* {
+  font-variation-settings: 'MONO' var(--mono), 'CRSV' var(--CRSV);
+}
+
+html {
+  @apply scroll-smooth;
+}
+
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: rgb(var(--blanc));
+  background: rgb(var(--bleu)) url('/images/noise.png') repeat;
+  @apply selection:bg-white selection:text-[#3645a1];
 }
