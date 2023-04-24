@@ -13,7 +13,7 @@ const links: Link[] = [
 ]
 
 export default function Nav() {
-  const router = useRouter()
+  const { pathname } = useRouter()
 
   return (
     <div className='mono-100 absolute top-6 flex w-full justify-between text-[22px] font-extrabold leading-none md:right-0 md:top-0 md:w-auto md:flex-col md:items-end md:gap-3 md:text-3xl lg:gap-y-4 lg:text-4xl'>
@@ -22,7 +22,7 @@ export default function Nav() {
           key={label}
           href={href}
           className={
-            router.pathname === href
+            pathname === href
               ? 'underline decoration-2 underline-offset-4 md:decoration-4 md:underline-offset-[6px]'
               : ''
           }
