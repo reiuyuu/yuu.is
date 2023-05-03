@@ -1,4 +1,4 @@
-type ArrowProps = {
+interface ArrowProps {
   className?: string
 }
 

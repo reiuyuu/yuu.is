@@ -1,4 +1,4 @@
-type TocProps = {
+interface TocProps {
   level: 'h2' | 'h3'
   text: string
   href: string

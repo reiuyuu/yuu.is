@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-type MetaProps = {
+interface MetaProps {
   title?: string
   description?: string
 }

@@ -6,7 +6,7 @@ import Link from 'next/link'
 import Balancer from 'react-wrap-balancer'
 import postsData from '../../posts.json'
 
-type Post = {
+interface Post {
   id: string
   date: string
   title: string

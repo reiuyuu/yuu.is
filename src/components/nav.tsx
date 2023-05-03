@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-type Link = {
+interface Link {
   href: string
   label: string
 }

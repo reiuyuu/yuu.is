@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { renderToString } from 'react-dom/server'
 import Balancer from 'react-wrap-balancer'
 
-type PostLayoutProps = {
+interface PostLayoutProps {
   id: string
   date: string
   title: string

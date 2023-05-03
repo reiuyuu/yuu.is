@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-type SocialLink = {
+interface SocialLink {
   label: string
   href: string
   icon: string
