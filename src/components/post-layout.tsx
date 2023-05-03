@@ -1,7 +1,7 @@
 import Arrow from '@/components/arrow'
 import Meta from '@/components/meta'
 import Toc from '@/components/toc'
-import getHeadings from '@/lib/get-headings'
+import getHeadings from '@/lib/utils'
 import Link from 'next/link'
 import { renderToString } from 'react-dom/server'
 import Balancer from 'react-wrap-balancer'

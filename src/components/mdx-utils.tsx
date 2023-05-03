@@ -1,5 +1,5 @@
 import Arrow from '@/components/arrow'
-import { getHeadingId } from '@/lib/get-headings'
+import { getHeadingId } from '@/lib/utils'
 import Image from 'next/image'
 import Link from 'next/link'
 
