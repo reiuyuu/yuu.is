@@ -1,6 +1,8 @@
+// Utility function that generate a heading ID from a given heading string
 export const getHeadingId = (heading: string): string =>
   heading.toLowerCase().replace(/\s+/g, '-')
 
+// Function to extract headings (h2 and h3) from an HTML string
 export default function getHeadings(html: string): {
   level: 'h2' | 'h3'
   text: string
