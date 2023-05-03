@@ -1,4 +1,4 @@
-import { A, H2, H3 } from '@/components/mdx-utils'
+import { A, H2, H3 } from '@/components/mdx-blocks'
 import '@/styles/globals.css'
 import { MDXProvider } from '@mdx-js/react'
 import { Analytics } from '@vercel/analytics/react'
