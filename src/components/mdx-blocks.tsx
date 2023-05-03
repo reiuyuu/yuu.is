@@ -3,7 +3,7 @@ import { getHeadingId } from '@/lib/utils'
 import Image from 'next/image'
 import Link from 'next/link'
 
-const H2 = ({ children }: { children: string }) => {
+export const H2 = ({ children }: { children: string }) => {
   const id = getHeadingId(children)
 
   return (
@@ -18,7 +18,7 @@ const H2 = ({ children }: { children: string }) => {
   )
 }
 
-const H3 = ({ children }: { children: string }) => {
+export const H3 = ({ children }: { children: string }) => {
   const id = getHeadingId(children)
 
   return (
@@ -33,7 +33,7 @@ const H3 = ({ children }: { children: string }) => {
   )
 }
 
-const A = ({ href, children }: { href: string; children: string }) =>
+export const A = ({ href, children }: { href: string; children: string }) =>
   href?.startsWith('/') ? (
     <Link href={href}>{children}</Link>
   ) : (
@@ -42,7 +42,7 @@ const A = ({ href, children }: { href: string; children: string }) =>
     </a>
   )
 
-const IMG = ({
+export const IMG = ({
   src,
   alt,
   desc,
@@ -62,13 +62,21 @@ const IMG = ({
   </div>
 )
 
-const Ref = ({ id }: { id: number }) => (
+export const Ref = ({ id }: { id: number }) => (
   <a href={`#f${id}`} id={`r${id}`} className='no-underline'>
     <sup>{id}</sup>
   </a>
 )
 
-const Note = ({ id, src, text }: { id: number; src: string; text: string }) => (
+export const Note = ({
+  id,
+  src,
+  text,
+}: {
+  id: number
+  src: string
+  text: string
+}) => (
   <li key={id}>
     <div className='flex items-center justify-between md:justify-start'>
       <A href={src}>{text}</A>
@@ -79,7 +87,7 @@ const Note = ({ id, src, text }: { id: number; src: string; text: string }) => (
   </li>
 )
 
-const FootNotes = ({ children }: { children: React.ReactNode }) => (
+export const FootNotes = ({ children }: { children: React.ReactNode }) => (
   <>
     <div className='flex justify-center'>
       <hr className='w-1/3 border-t-2' />
@@ -87,5 +95,3 @@ const FootNotes = ({ children }: { children: React.ReactNode }) => (
     <ol className='my-0 md:my-0 lg:my-0'>{children}</ol>
   </>
 )
-
-export { A, FootNotes, H2, H3, IMG, Note, Ref }

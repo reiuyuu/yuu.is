@@ -1,4 +1,4 @@
-const getHeadingId = (heading: string): string =>
+export const getHeadingId = (heading: string): string =>
   heading.toLowerCase().replace(/\s+/g, '-')
 
 export default function getHeadings(html: string): {
@@ -20,5 +20,3 @@ export default function getHeadings(html: string): {
 
   return headings
 }
-
-export { getHeadingId }
